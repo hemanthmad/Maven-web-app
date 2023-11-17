@@ -20,6 +20,16 @@ pipeline {
 		        sh "/var/lib/jenkins/tools/hudson.tasks.Maven_MavenInstallation/Maven/bin/mvn sonar:sonar"
 		        }
 	        }
+	    }
+	  stage('Deployment'){
+		steps{
+			script{
+				def jenkinsWorkspace = "${WORKSPACE}"
+				def tomcatWebapps = "/root/Hemanth_maven_learning/apache-tomcat-8.5.95/webapps"
+        			// Copy the file using 'sh' step
+        			sh "cp ${jenkinsWorkspace}/Demo-web-app.war ${tomcatWebapps}/"
+			}
 		}
+	  }
     }
 }
