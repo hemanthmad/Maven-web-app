@@ -26,7 +26,7 @@ pipeline {
 			script{
 				def jenkinsWorkspace = "${WORKSPACE}"
 				def tomcatWebapps = "/root/Hemanth_maven_learning/apache-tomcat-8.5.95/webapps"
-				sh "chmod +r ${jenkinsWorkspace}/Demo-web-app.war"
+				sh "chmod +r ${jenkinsWorkspace}/target/Demo-web-app.war"
 
         			// Copy the file using 'sh' step
         			sh "cp ${jenkinsWorkspace}/target/Demo-web-app.war ${tomcatWebapps}/"
