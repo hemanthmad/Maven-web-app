@@ -29,7 +29,7 @@ pipeline {
 				sh "chmod +r ${jenkinsWorkspace}/Demo-web-app.war"
 
         			// Copy the file using 'sh' step
-        			sh "cp ${jenkinsWorkspace}/Demo-web-app.war ${tomcatWebapps}/"
+        			sh "cp ${jenkinsWorkspace}/target/Demo-web-app.war ${tomcatWebapps}/"
 			}
 		}
 	  }
